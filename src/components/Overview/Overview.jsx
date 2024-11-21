@@ -1,6 +1,5 @@
 import React from "react";
-import { overviewData } from "./data"; // Importing the data
-
+import { overviewData } from "./data";
 const Overview = () => {
   const { heading, headingLabel, paragraph, listHeading, listData } = overviewData;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import nextMeetingData from "./data"; // Adjust the path as needed
+import nextMeetingData from "./data";
 
 function NextMeeting() {
     const { title, date, meetingDetails } = nextMeetingData;

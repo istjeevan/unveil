@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { actionsData } from "./data"; // Importing action data
-
+import { actionsData } from "./data"; 
 const Actions = () => {
     const { heading, actionItems } = actionsData;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import keyContactsData from "./data"; // Adjust the path as needed
+import keyContactsData from "./data";
 import messageIcon from "../../images/envelope.png"
 import callIcon from "../../images/call.png"
 
