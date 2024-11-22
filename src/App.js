@@ -5,12 +5,12 @@ import FrameBottom from "./components/FrameBottom/FrameBottom";  // Import Frame
 
 function App() {
   return (
-    <div className="bg-gray-100">
+    // <div className="bg-gray-100">
       <div className="max-w-[1620px] mx-auto">
         <Frame /> 
         <FrameBottom />
       </div>
-    </div>
+    // </div>
   );
 }
 
