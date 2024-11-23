@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import { emailsData } from "./data";
 
-const EmailsContent = ({ icon }) => {
+const EmailsContent = ({ icon, onActivityClick }) => {
+    const [selectedId, setSelectedId] = useState(null);
+
+    const onActivityClickHanlder = (val) => {
+        let valId = val?.id || null;
+        if (!selectedId || (selectedId && selectedId !== valId)) {
+            setSelectedId(valId);
+            onActivityClick(val);
+        } else {
+            setSelectedId(null);
+            onActivityClick(null);
+        }
+    }
+
     return (
         <div className="mt-3">
             {emailsData.map((section) => (
@@ -14,7 +27,8 @@ const EmailsContent = ({ icon }) => {
                         {section.activities.map((activity, index) => (
                             <div
                                 key={index}
-                                className={`p-4 border-2 border-purple-300 rounded-lg shadow-sm`}
+                                className={`p-4 border-2 border-purple-300 rounded-lg shadow-sm ${selectedId == activity.id ? `bg-purple-100` : ``}`}
+                                onClick={() => onActivityClickHanlder(activity)}
                             >
                                 <div className="flex items-center justify-between">
                                     <p className="text-lg font-semibold text-purple-950">{activity.title}</p>
