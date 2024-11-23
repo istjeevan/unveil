@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { meetingsData } from "./data"; // Import meetingsData from the data file
 
-const MeetingsContent = () => {
+const MeetingsContent = ({onActivityClick}) => {
+    const [selectedId, setSelectedId] = useState(null);
 
+    const onActivityClickHanlder = (val) => {
+        let valId = val?.id || null;
+        if(!selectedId || (selectedId && selectedId !== valId)){
+            setSelectedId(valId);
+            onActivityClick(val);
+        }else {
+            setSelectedId(null);
+            onActivityClick(null);
+        } 
+    }
     return (
         <div className="mt-3">
             {meetingsData.map((section) => (
@@ -15,7 +26,8 @@ const MeetingsContent = () => {
                         {section.activities.map((meeting, index) => (
                             <div
                                 key={index}
-                                className={`p-4 pt-2 border-2 border-purple-400 rounded-lg `}
+                                className={`p-4 pt-2 border-2 border-purple-400 rounded-lg ${selectedId == meeting.id ? `bg-purple-100` : ``}`}
+                                onClick={() => onActivityClickHanlder(meeting)}
                             >
                                 <div className="flex items-center justify-between">
                                     <span
