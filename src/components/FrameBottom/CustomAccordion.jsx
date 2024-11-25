@@ -59,9 +59,9 @@ const CustomAccordion = ({ data, activeTab, updateHeight }) => {
                 }}
               >
                 {expanded.includes(index) ? (
-                  <ExpandLessIcon sx={{ color: "#45185A" }} />
-                ) : (
                   <ExpandMoreIcon sx={{ color: "#45185A" }} />
+                ) : (
+                  <ExpandLessIcon sx={{ color: "#45185A" }} />
                 )}
               </Box>
               <Typography>{label}</Typography>

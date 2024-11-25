@@ -56,7 +56,7 @@ export const activityData = [
                 details: [
                     {
                         label: "Key Details",
-                        title: "TopicsDiscussed:",
+                        title: "Topics Discussed:",
                         arrayData: [
                             {
                                 title: "AI Model Scaling Challenges:",
@@ -126,7 +126,7 @@ export const meetingsData = [
                     { name: "4", avatar: "", colorClass: "#266DF0" },
                     { name: "5", avatar: "", colorClass: "#1ABCFE" },
                     { name: "6", avatar: "", colorClass: "#FF7262" },
-                    { name: "7", avatar: "", colorClass: "#CB90FC" },
+                    { name: "7", avatar: "", colorClass: "#CB90FC", inactiveColorClass: "#EEEBF1" },
                 ],
                 details: [
                     {
@@ -185,7 +185,7 @@ export const meetingsData = [
                     { name: "4", avatar: "", colorClass: "#266DF0" },
                     { name: "5", avatar: "", colorClass: "#1ABCFE" },
                     { name: "6", avatar: "", colorClass: "#FF7262" },
-                    { name: "7", avatar: "", colorClass: "#CB90FC" },
+                    { name: "7", avatar: "", colorClass: "#CB90FC", inactiveColorClass: "#EEEBF1" },
                 ],
             },
             {
@@ -201,7 +201,7 @@ export const meetingsData = [
                     { name: "4", avatar: "", colorClass: "#266DF0" },
                     { name: "5", avatar: "", colorClass: "#1ABCFE" },
                     { name: "6", avatar: "", colorClass: "#FF7262" },
-                    { name: "7", avatar: "", colorClass: "#CB90FC" },
+                    { name: "7", avatar: "", colorClass: "#CB90FC", inactiveColorClass: "#EEEBF1" },
                 ],
             },
         ],
