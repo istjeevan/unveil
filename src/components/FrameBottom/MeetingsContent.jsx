@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { meetingsData } from "./data"; // Import meetingsData from the data file
 
-const MeetingsContent = ({onActivityClick}) => {
+const MeetingsContent = ({ onActivityClick }) => {
     const [selectedId, setSelectedId] = useState(null);
 
     const onActivityClickHanlder = (val) => {
         let valId = val?.id || null;
-        if(!selectedId || (selectedId && selectedId !== valId)){
+        if (!selectedId || (selectedId && selectedId !== valId)) {
             setSelectedId(valId);
             onActivityClick(val);
-        }else {
+        } else {
             setSelectedId(null);
             onActivityClick(null);
-        } 
+        }
     }
     return (
         <div className="mt-3">
@@ -43,6 +43,7 @@ const MeetingsContent = ({onActivityClick}) => {
                                             meeting.attendees.map((attendee, index) => {
                                                 let color = attendee?.colorClass?.toString() || "#CB90FC";
                                                 let lastItem = index + 1 == meeting.attendees.length;
+                                                let inactiveColor = attendee?.inactiveColorClass?.toString() || "#CB90FC";
                                                 return (
                                                     attendee.avatar ? (
                                                         <img
@@ -55,9 +56,13 @@ const MeetingsContent = ({onActivityClick}) => {
                                                         ? (
                                                             <div
                                                                 key={index}
-                                                                className={`w-8 h-8 rounded-full border-2 border-white`}
-                                                                style={{ backgroundColor: color }}
-                                                            >  +2</div>
+                                                                className={`w-8 h-8 rounded-full border-2 border-white flex justify-center items-center`}
+                                                                style={{ backgroundColor: selectedId == meeting.id ? color : inactiveColor }}
+                                                            >
+                                                                <span>
+                                                                    +2
+                                                                </span>
+                                                            </div>
                                                         )
                                                         : (
                                                             <div
