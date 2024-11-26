@@ -6,15 +6,15 @@ import KeyContacts from "../KeyContacts/KeyContacts";
 
 function Frame() {
     return (
-        <div className="max-w-8xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-8 gap-6">
+        <div className="max-w-8xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-10 gap-[2rem]">
             {/* Main Content */}
-            <div className="lg:col-span-6">
+            <div className="lg:col-span-7">
                 <Overview />
                 <Actions />
             </div>
 
             {/* Right Sidebar */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-3 space-y-9">
                 <NextMeeting />
                 <KeyContacts />
             </div>

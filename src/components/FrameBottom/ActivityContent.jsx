@@ -15,6 +15,10 @@ const ActivityContent = ({ icon, onActivityClick }) => {
         } 
     }
 
+    useEffect(() =>{
+        onActivityClickHanlder(activityData[0].activities[0])
+    },[])
+
     return (
         <div className="mt-3">
             {activityData.map((section) => (

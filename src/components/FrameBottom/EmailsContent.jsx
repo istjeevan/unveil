@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { emailsData } from "./data";
 
 const EmailsContent = ({ icon, onActivityClick }) => {
@@ -14,6 +14,10 @@ const EmailsContent = ({ icon, onActivityClick }) => {
             onActivityClick(null);
         }
     }
+
+    useEffect(() =>{
+        onActivityClickHanlder(emailsData[0].activities[0])
+    },[])
 
     return (
         <div className="mt-3">

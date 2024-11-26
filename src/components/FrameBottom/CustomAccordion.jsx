@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -11,15 +11,33 @@ const CustomAccordion = ({ data, activeTab, updateHeight }) => {
   const [expanded, setExpanded] = useState([]);
 
   const handleChange = (panel) => (event, isExpanded) => {
-    if(expanded?.length == 1 && !isExpanded){
-      updateHeight(544)
-    }else{
-      updateHeight(1100)
+    if (expanded?.length == 1 && !isExpanded) {
+      if (activeTab == "Meetings") {
+        updateHeight(900)
+      } else {
+        updateHeight(600)
+      }
+    } else {
+      updateHeight(1150)
     }
     setExpanded((prevExpanded) =>
       isExpanded ? [...prevExpanded, panel] : prevExpanded.filter((item) => item !== panel)
     );
   };
+
+  useEffect(() => {
+    // for (let i = 0; i < () ? 3 : activeTab == "Emails" ? 4 : 0; i++) {
+    //   setExpanded((prev) => [...prev, i])
+    // }
+
+    if (activeTab == "Activity" || activeTab == "Meetings") {
+      setExpanded([0, 1]);
+    } else if (activeTab == "Emails") {
+      setExpanded([0, 1, 2]);
+    }
+    updateHeight(1150)
+
+  }, []);
 
   return (
     <div style={{ marginLeft: "-12px" }}>
@@ -74,16 +92,16 @@ const CustomAccordion = ({ data, activeTab, updateHeight }) => {
               {activeTab && (activeTab == "Activity" || activeTab == "Meetings")
                 ?
                 <ul>
-                  {title && <span className="text-base font-semibold">{title}</span>}
+                  {title && <span className="text-base font-semibold text-gray-700">{title}</span>}
                   {arrayData &&
                     arrayData.map((item, index) => {
                       let title = item.title || "";
                       let text = item.text || "";
                       return (
                         <li key={index} style={{ listStyleType: "none", display: "flex", alignItems: "center" }}>
-                          <div className="flex items-start">
+                          <div className="flex items-start text-sm text-gray-700">
                             <span className="font-semibold mr-1">{index + 1}.</span>
-                            <span className="font-semibold tracking-tighter">
+                            <span className="font-semibold tracking-tight leading-relaxed">
                               {title} <span className="font-normal">
                                 {text}
                               </span>
@@ -104,7 +122,7 @@ const CustomAccordion = ({ data, activeTab, updateHeight }) => {
                         return (
                           <li key={index} style={{ listStyleType: "none", display: "flex", alignItems: "center" }} >
                             <div className={`${message ? `gap-4` : ``} flex flex-col items-start`}>
-                              <span className={`${message ? `` : `font-semibold`} tracking-tighter`}>
+                              <span className={`${message ? `` : `font-semibold`} tracking-tighter text-gray-700`}>
                                 {title}
                               </span>
                               <span className="font-normal">

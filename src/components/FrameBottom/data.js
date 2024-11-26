@@ -76,15 +76,15 @@ export const activityData = [
                         label: "Transcript",
                         arrayData: [
                             {
-                                title: "Aryo",
+                                title: "Aryo:",
                                 text: "Thanks for meeting today, Lisa and Michael. I wanted to dive deeper into the AI scaling needs you mentioned and discuss how our solution could address them. Can you tell me a bit more about the current challenges?"
                             },
                             {
-                                title: "Lisa Anderson",
+                                title: "Lisa Anderson:",
                                 text: "Absolutely. Our main issue is scaling AI models across multiple data centers without causing downtime or impacting performance. We have limitations in terms of processing power and network bandwidth, especially when we try to scale models that require high compute resources."
                             },
                             {
-                                title: "Michael Chen",
+                                title: "Michael Chen:",
                                 text: "Exactly. We’re working with some older infrastructure, and while we’ve tried to make it compatible with newer systems, we’re still hitting roadblocks."
                             }
                         ]
@@ -151,15 +151,15 @@ export const meetingsData = [
                         label: "Transcript",
                         arrayData: [
                             {
-                                title: "Aryo",
+                                title: "Aryo:",
                                 text: "Thanks for meeting today, Lisa and Michael. I wanted to dive deeper into the AI scaling needs you mentioned and discuss how our solution could address them. Can you tell me a bit more about the current challenges?"
                             },
                             {
-                                title: "Lisa Anderson",
+                                title: "Lisa Anderson:",
                                 text: "Absolutely. Our main issue is scaling AI models across multiple data centers without causing downtime or impacting performance. We have limitations in terms of processing power and network bandwidth, especially when we try to scale models that require high compute resources."
                             },
                             {
-                                title: "Michael Chen",
+                                title: "Michael Chen:",
                                 text: "Exactly. We’re working with some older infrastructure, and while we’ve tried to make it compatible with newer systems, we’re still hitting roadblocks."
                             }
                         ]
