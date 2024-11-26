@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { meetingsData } from "./data"; // Import meetingsData from the data file
 
 const MeetingsContent = ({ onActivityClick }) => {
@@ -13,7 +13,11 @@ const MeetingsContent = ({ onActivityClick }) => {
             setSelectedId(null);
             onActivityClick(null);
         }
-    }
+    };
+
+    useEffect(() =>{
+        onActivityClickHanlder(meetingsData[0].activities[0])
+    },[])
     return (
         <div className="mt-3">
             {meetingsData.map((section) => (

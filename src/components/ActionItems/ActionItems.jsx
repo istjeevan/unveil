@@ -14,13 +14,13 @@ const Actions = () => {
 
     return (
         <div className="md:flex md:gap-6">
-            <div className="flex-1 bg-white shadow-lg p-6 rounded-b-lg">
+            <div className="flex-1 bg-white shadow-lg p-6 rounded-b-lg border">
                 <h2 className="font-medium mb-4 text-gray-400 text-xl">{heading}</h2>
                 <ul className="pt-3 text-gray-700">
                     {data.map((item) => {
                         let checked = item.checked;
                         return (
-                            <li key={item.id} className="mb-2 flex items-center gap-2">
+                            <li key={item.id} className="mb-2 flex items-center gap-2 font-medium">
                                 <div class="inline-flex items-center">
                                     <label class="flex items-center cursor-pointer relative">
                                         <input

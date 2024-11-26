@@ -32,8 +32,8 @@ function FrameBottom() {
 
 
     return (
-        <div className="max-w-8xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-8 gap-6 pt-0 relative">
-            <div className="lg:col-span-6 z-0 shadow-lg lg:z-10">
+        <div className="max-w-8xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-10 gap-6 pt-0 relative">
+            <div className="lg:col-span-7 z-0 shadow-lg lg:z-10 border rounded-lg">
                 <div className="md:flex md:gap-6"
                     style={{ minHeight: `${dynamicHeight}px` }}
                 >
@@ -65,7 +65,7 @@ function FrameBottom() {
                 </div>
             </div>
             {selectedActivity && (
-                <div className="lg:col-span-8 absolute right-0 bg-white shadow-lg rounded-lg p-6 mr-6 w-[75%] lg:w-[28%]"
+                <div className="lg:col-span-10 absolute right-0 bg-white shadow-lg rounded-lg p-6 mr-6 w-[75%] lg:w-[33%] border"
                     ref={sideDivRef}
                     style={{ minHeight: `${dynamicHeight}px` }}>
                     <div className="min-w-[350] max-w-[350]">
