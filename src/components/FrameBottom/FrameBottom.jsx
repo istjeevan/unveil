@@ -8,7 +8,7 @@ import pdfIcon from "../../images/document.png";
 import { FormBottom } from "./data";
 import CustomAccordion from "./CustomAccordion";
 
-function FrameBottom() {
+function FrameBottom({setModalOpenHanlder}) {
     const { heading, buttonName, tabsData } = FormBottom;
     const [activeTab, setActiveTab] = useState("Activity");
     const [selectedActivity, setSelectedActivity] = useState(null);
@@ -40,9 +40,10 @@ function FrameBottom() {
                     <div className="flex-1 bg-white shadow-lg rounded-lg p-6">
                         <div className="flex justify-between items-end mb-4">
                             <h2 className="text-xl font-bold">{heading}</h2>
-                            <button className={`bg-purple-400 text-purple-950 px-2 py-1 rounded-md text-sm font-medium flex gap-2 items-center`}>
+                            <button onClick={() => setModalOpenHanlder()} 
+                            className={`group pointer bg-purple-400 text-purple-950 px-2 py-1 rounded-md text-sm font-medium flex gap-2 items-center`}>
                                 <span className="font-extrabold text-xl" style={{ marginTop: `-5px` }}>+</span>
-                                <span>{buttonName}</span>
+                                <span className="hidden group-hover:inline">{buttonName}</span>
                             </button>
                         </div>
                         <div className="flex space-x-4 mb-6 border-b-2 border-gray-200 pb-4 max-w-full overflow-x-auto">
