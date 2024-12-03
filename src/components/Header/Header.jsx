@@ -16,7 +16,7 @@ function Header() {
                     </div>
                 </div>
 
-                <div className="flex space-x-10 min-w-[420px]">
+                <div className="flex space-x-8 min-w-[400px]">
                     {stats.map((stat, index) => (
                         <div key={index}>
                             <p className="text-xs font-semibold text-gray-500">{stat.label}</p>

@@ -20,8 +20,8 @@ function KeyContacts() {
                             <img src={messageIcon} alt="message" style={{ width: '12px', height: '12px', marginLeft: '8px' }} />
                             <img src={callIcon} alt="call" style={{ width: '12px', height: '12px' }} />
                         </div>
-                        <p className="text-sm text-gray-400 mt-[-5px]">{contact.role}</p>
-                        <p className="text-sm text-gray-500 mt-2">
+                        <p className="[@media(max-width:1453px)]:text-xs text-sm text-gray-400 mt-[-5px]">{contact.role}</p>
+                        <p className="[@media(max-width:1453px)]:text-xs text-sm text-gray-500 mt-2">
                             Last talked: {contact.lastTalked}<br />
                             {contact.details}
                         </p>

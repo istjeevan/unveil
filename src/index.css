@@ -7,7 +7,7 @@
 
 /* Global Styles */
 body {
-    @apply bg-gray-100; /* Tailwind's background color for #f3f4f6 */
+    @apply bg-white; /* Tailwind's background color for #f3f4f6 */
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 

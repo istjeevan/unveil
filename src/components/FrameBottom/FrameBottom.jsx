@@ -70,7 +70,7 @@ function FrameBottom({setModalOpenHanlder}) {
                     ref={sideDivRef}
                     style={{ minHeight: `${dynamicHeight}px` }}>
                     <div className="min-w-[350] max-w-[350]">
-                        <div className="pl-[0] pt-8 lg:pl-[22%]">
+                        <div className="pl-[0] pt-8 lg:pl-[15%]">
                             <div className="border-b-2 pt-8 py-[12px]">
                                 <p className="text-purple-950 font-semibold truncate">{
                                     activeTab == "Activity"

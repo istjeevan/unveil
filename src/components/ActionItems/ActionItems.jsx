@@ -39,7 +39,7 @@ const Actions = () => {
                                 </div>
                                 <span className={checked ? `line-through text-gray-400` : `text-purple-950`}>
                                     {item.assignee
-                                        ? <span className="px-2 bg-purple-100 rounded text-sm font-medium py-1 mr-2">
+                                        ? <span className="text-[#45185A] px-2 bg-purple-100 rounded text-sm font-medium py-1 mr-2">
                                             {item.assignee}
                                         </span>
                                         : ""}
