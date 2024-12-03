@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { meetingsData } from "./data"; // Import meetingsData from the data file
 
-const MeetingsContent = ({ onActivityClick }) => {
+const MeetingsContent = ({ onActivityClick, cleanup, setCleanup }) => {
     const [selectedId, setSelectedId] = useState(null);
 
     const onActivityClickHanlder = (val) => {
@@ -17,7 +17,15 @@ const MeetingsContent = ({ onActivityClick }) => {
 
     useEffect(() =>{
         onActivityClickHanlder(meetingsData[0].activities[0])
-    },[])
+    },[]);
+
+    
+    useEffect(() => {
+        if (cleanup) {
+            setSelectedId(null);
+            setCleanup(null)
+        }
+    }, [cleanup]);
     return (
         <div className="mt-3">
             {meetingsData.map((section) => (

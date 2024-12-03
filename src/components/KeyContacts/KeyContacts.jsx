@@ -5,7 +5,10 @@ import callIcon from "../../images/call.png"
 
 function KeyContacts() {
     return (
-        <div className="bg-white rounded-lg shadow-lg py-4 px-6 border">
+        <div className="bg-white rounded-lg shadow-lg py-4 px-6 border"
+        style={{
+            boxShadow: "-25px 8px 20px rgba(0, 0, 255, 0.05)",
+        }}>
             <h3 className="text-gray-800 font-semibold mb-4 mt-2 text-xl">Key Contacts</h3>
             {keyContactsData.map((contact) => (
                 <div className="flex items-start mb-[0.4rem] pt-3 [@media(max-width:1453px)]:mb-4" key={contact.id}>
@@ -20,7 +23,7 @@ function KeyContacts() {
                             <img src={messageIcon} alt="message" style={{ width: '12px', height: '12px', marginLeft: '8px' }} />
                             <img src={callIcon} alt="call" style={{ width: '12px', height: '12px' }} />
                         </div>
-                        <p className="[@media(max-width:1453px)]:text-xs text-sm text-gray-400 mt-[-5px]">{contact.role}</p>
+                        <p className="[@media(max-width:1453px)]:text-xs text-xs text-gray-400 mt-[-5px]">{contact.role}</p>
                         <p className="[@media(max-width:1453px)]:text-xs text-sm text-gray-500 mt-2">
                             Last talked: {contact.lastTalked}<br />
                             {contact.details}

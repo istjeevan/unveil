@@ -1,24 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { activityData } from "./data";
 
-const ActivityContent = ({ icon, onActivityClick }) => {
+const ActivityContent = ({ icon, onActivityClick, cleanup, setCleanup }) => {
     const [selectedId, setSelectedId] = useState(null);
 
     const onActivityClickHanlder = (val) => {
         let valId = val?.id || null;
-        if(!selectedId || (selectedId && selectedId !== valId)){
+        if (!selectedId || (selectedId && selectedId !== valId)) {
             setSelectedId(valId);
             onActivityClick(val);
-        }else {
+        } else {
             setSelectedId(null);
             onActivityClick(null);
-        } 
+        }
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         onActivityClickHanlder(activityData[0].activities[0])
-    },[])
+    }, []);
 
+    useEffect(() => {
+        if (cleanup) {
+            setSelectedId(null);
+            setCleanup(null)
+        }
+    }, [cleanup]);
     return (
         <div className="mt-3">
             {activityData.map((section) => (

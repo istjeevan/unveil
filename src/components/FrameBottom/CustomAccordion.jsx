@@ -91,18 +91,22 @@ const CustomAccordion = ({ data, activeTab, updateHeight }) => {
               }}>
               {activeTab && (activeTab == "Activity" || activeTab == "Meetings")
                 ?
-                <ul>
-                  {title && <span className="text-base font-semibold text-gray-700">{title}</span>}
+                <ul className={`${label == "Transcript" ? 'space-y-8' : ''} `}>
+                  {title && <span className="font-[500] text-[#232529]" style={{
+                    fontSize: `0.95rem`,
+                    marginLeft: `-4px`
+                  }}>
+                    {title}</span>}
                   {arrayData &&
                     arrayData.map((item, index) => {
                       let title = item.title || "";
                       let text = item.text || "";
                       return (
                         <li key={index} style={{ listStyleType: "none", display: "flex", alignItems: "center" }}>
-                          <div className="flex items-start text-sm text-gray-700">
-                            <span className="font-semibold mr-1">{index + 1}.</span>
-                            <span className="font-semibold tracking-tight leading-relaxed">
-                              {title} <span className="font-normal">
+                          <div className="flex items-start text-sm text-[#232529]">
+                            <span className={`font-[500] mr-1 ${label == "Transcript" ? 'hidden' : ''} `}>{index + 1}.</span>
+                            <span className="font-[500] tracking-tight leading-relaxed" style={{fontSize: 'small'}}>
+                              {title} <span className="font-[400]">
                                 {text}
                               </span>
                             </span>
@@ -122,17 +126,17 @@ const CustomAccordion = ({ data, activeTab, updateHeight }) => {
                         return (
                           <li key={index} style={{ listStyleType: "none", display: "flex", alignItems: "center" }} >
                             <div className={`${message ? `gap-4` : ``} flex flex-col items-start`}>
-                              <span className={`${message ? `` : `font-semibold`} tracking-tighter text-gray-700`}>
+                              <span className={`${message ? `` : `font-[500]`} tracking-tighter text-[#232529] text-sm`}>
                                 {title}
                               </span>
-                              <span className="font-normal">
+                              <span className="font-[400] text-[#232529] text-sm">
                                 {message}
                               </span>
 
                               {regards ?
                                 <span className="flex flex-col">
                                   {regards.map((val) => (
-                                    <span className="font-normal">
+                                    <span className="font-[400] text-[#232529] text-sm">
                                       {val}
                                     </span>
                                   ))

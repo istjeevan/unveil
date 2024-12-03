@@ -224,8 +224,8 @@ export const emailsData = [
                     {
                         label: "Recipients",
                         arrayData: [
+                            { title: "Michael Chen" },
                             { title: "Lisa Anderson" },
-                            { title: "Michael Chen" }
                         ]
                     },
                     {
@@ -235,7 +235,7 @@ export const emailsData = [
                         ]
                     },
                     {
-                        label: "Content",
+                        label: "Contents",
                         arrayData: [
                             {
                                 title: "Hi Michael and Lisa,",
