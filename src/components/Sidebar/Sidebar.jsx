@@ -11,9 +11,11 @@ import sidebarContent from "./data"; // Import static content
 function Sidebar({ isOpen, onClose }) {
   return (
     <div
-      className={`border-2 border-purple-300 rounded-lg fixed top-0 right-0 h-full w-[22rem] bg-white shadow-lg transform ${
-        isOpen ? "translate-x-0" : "translate-x-full"
-      } transition-transform duration-300 z-50 overflow-hidden`}
+      className={`border-2 border-purple-300 rounded-lg fixed top-0 right-0 h-full w-[20rem] bg-white transform ${isOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 z-50 overflow-hidden`}
+      style={{
+        boxShadow: `0 10px ${isOpen ? `85px` : 0} rgba(0, 0, 0, 0.5)`,
+      }}
     >
       {/* Header Section */}
       <div className="border-b-2 border-purple-300">
@@ -43,11 +45,11 @@ function Sidebar({ isOpen, onClose }) {
         {/* Copilot Intro */}
         <span className="pt-4 pb-2 flex gap-1 items-center">
           <img src={AiIconFilled} alt="" />
-          <p className="text-purple-950 font-semibold">
+          <p className="text-[#45185A] font-[500]">
             {sidebarContent.copilotIntro.title}
           </p>
         </span>
-        <p className="pb-4 text-purple-950 font-medium text-sm">
+        <p className="pb-4 text-[#45185A] font-[400] text-[0.8rem]">
           {sidebarContent.copilotIntro.description}
         </p>
 
@@ -56,11 +58,9 @@ function Sidebar({ isOpen, onClose }) {
           {sidebarContent.prompts.map((prompt, index) => (
             <button
               key={index}
-              className={`${
-                prompt === "Show more prompts" ? "flex items-center" : ""
-              } bg-white border-2 font-medium px-2 py-1 rounded-lg text-left ${
-                prompt === "Show more prompts" ? "text-gray-400" : "text-purple-400"
-              } text-xs`}
+              className={`${prompt === "Show more prompts" ? "flex items-center" : ""
+                } bg-white border-2 font-medium px-2 py-1 rounded-lg text-left ${prompt === "Show more prompts" ? "text-gray-400" : "text-purple-400"
+                } text-xs`}
             >
               <span>{prompt}</span>
               {prompt === "Show more prompts" && (

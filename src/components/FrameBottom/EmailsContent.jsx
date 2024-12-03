@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { emailsData } from "./data";
 
-const EmailsContent = ({ icon, onActivityClick }) => {
+const EmailsContent = ({ icon, onActivityClick, cleanup,setCleanup }) => {
     const [selectedId, setSelectedId] = useState(null);
 
     const onActivityClickHanlder = (val) => {
@@ -12,12 +12,21 @@ const EmailsContent = ({ icon, onActivityClick }) => {
         } else {
             setSelectedId(null);
             onActivityClick(null);
+            setCleanup(null)
+
         }
     }
 
     useEffect(() =>{
         onActivityClickHanlder(emailsData[0].activities[0])
     },[])
+
+    useEffect(() => {
+        if (cleanup) {
+            setSelectedId(null);
+            setCleanup(null)
+        }
+    }, [cleanup]);
 
     return (
         <div className="mt-3">
@@ -42,7 +51,7 @@ const EmailsContent = ({ icon, onActivityClick }) => {
                                 </div>
                                 <span className="text-xs font-thin text-purple-400">{activity.subTitle}</span>
 
-                                <p className="text-gray-600 mt-2 text-sm font-semibold">{activity.description}</p>
+                                <p className="mt-2 text-sm font-semibold text-[#868E96]">{activity.description}</p>
                                 {activity.iconLabel && (
                                     <span className="border inline-flex items-center px-2 rounded-md text-gray-600 mt-2 text-sm">
                                         <img src={icon} alt="call" className="w-3 h-3" />
