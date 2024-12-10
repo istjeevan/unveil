@@ -1,7 +1,9 @@
 import React from "react";
 import loginStaticData from "./data";
+import { useNavigate } from "react-router-dom";
 
 const LoginScreen = () => {
+  const navigate = useNavigate()
   const {
     logo,
     headings,
@@ -86,6 +88,7 @@ const LoginScreen = () => {
               <button
                 className="bg-[#45185a] mt-12 text-sm text-white font-semibold py-4 rounded-xl shadow-md hover:shadow-lg transition mt-8"
                 style={button.style}
+                onClick={() => navigate('/home')}
               >
                 {button.text}
               </button>
